@@ -1,5 +1,5 @@
-import Funtions
-BirthYear=int()
-BirthYear=int(input('Birth Year: '))
-age = BornYear(BirthYear)
+from Funtions import * 
+age=int()
+BirthYear=input('Birth Year: ')
+age = BornYear(int(BirthYear))
 print(age)
