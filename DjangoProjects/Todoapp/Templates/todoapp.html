@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<h1>This is the To Do page </h1>
+<!-- <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head> -->
+<body>
+<ul>
+    <!-- <li>Temp Item A</li>
+    <li>Temp Item B</li> -->
+    {% for item in all_items%}
+    <li>{{ item.content}}
+        <form action="/deleteTodoapp/{{item.id}}/"
+              style="display:inline";
+              method="post">{% csrf_token %}
+            <input type = "submit" value = "Delete"/> 
+        </form>
+    </li>
+    {% endfor%}
+</ul>
+<form action="/addTodoapp/" method="post">{% csrf_token %}
+    <input type ="text" name = "content" /> 
+    <input type = "submit" value = "Add"/> 
+</form>
+</body>
+</html>

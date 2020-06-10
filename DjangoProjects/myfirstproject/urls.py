@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from Todoapp.views import todoviewer, addTodo, deleteTodo
 
 urlpatterns = [
     path('polls/', include('polls.urls')),
     path('products/', include('products.urls')),
+    path('Todoapp/', todoviewer),
     path('admin/', admin.site.urls),
+    path('addTodoapp/', addTodo),
+    path('deleteTodoapp/<int:Todoapp_id>/', deleteTodo),
 ]
