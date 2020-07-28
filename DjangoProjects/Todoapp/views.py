@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from .models import TodoItem
 
 def todoviewer(request):
@@ -17,3 +17,5 @@ def deleteTodo(request, Todoapp_id):
     item_delete.delete()
     return HttpResponseRedirect('/Todoapp/')
 # Create your views here.
+def home(request):
+    return HttpResponse('<h1>Blog Home<h1>')
